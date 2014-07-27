@@ -1,53 +1,62 @@
-<%= form_for(@schedule) do |f| %>
-  <% if @schedule.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@schedule.errors.count, "error") %> prohibited this schedule from being saved:</h2>
-
-      <ul>
-      <% @schedule.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
+<%= form_for @schedule, :html => { :class => 'form-horizontal' } do |f| %>
+  <div class="control-group">
+    <%= f.label :sched_num, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :sched_num, :class => 'number_field' %>
     </div>
-  <% end %>
+  </div>
+  <div class="control-group">
+    <%= f.label :route_id, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.number_field :route_id, :class => 'number_field' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :etd, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :etd, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :atd, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :atd, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :eta, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :eta, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :ata, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.datetime_select :ata, :class => 'datetime_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :delay, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.time_select :delay, :class => 'time_select' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :canceled, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.check_box :canceled, :class => 'check_box' %>
+    </div>
+  </div>
+  <div class="control-group">
+    <%= f.label :info, :class => 'control-label' %>
+    <div class="controls">
+      <%= f.text_area :info, :class => 'text_area' %>
+    </div>
+  </div>
 
-  <div class="field">
-    <%= f.label :sched_num %><br />
-    <%= f.number_field :sched_num %>
-  </div>
-  <div class="field">
-    <%= f.label :route_id %><br />
-    <%= f.number_field :route_id %>
-  </div>
-  <div class="field">
-    <%= f.label :etd %><br />
-    <%= f.datetime_select :etd %>
-  </div>
-  <div class="field">
-    <%= f.label :atd %><br />
-    <%= f.datetime_select :atd %>
-  </div>
-  <div class="field">
-    <%= f.label :eta %><br />
-    <%= f.datetime_select :eta %>
-  </div>
-  <div class="field">
-    <%= f.label :ata %><br />
-    <%= f.datetime_select :ata %>
-  </div>
-  <div class="field">
-    <%= f.label :delay %><br />
-    <%= f.time_select :delay %>
-  </div>
-  <div class="field">
-    <%= f.label :canceled %><br />
-    <%= f.check_box :canceled %>
-  </div>
-  <div class="field">
-    <%= f.label :info %><br />
-    <%= f.text_area :info %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+  <div class="form-actions">
+    <%= f.submit nil, :class => 'btn btn-primary' %>
+    <%= link_to t('.cancel', :default => t("helpers.links.cancel")),
+                schedules_path, :class => 'btn' %>
   </div>
 <% end %>
