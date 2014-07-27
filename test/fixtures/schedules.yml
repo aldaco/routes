@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
+
+one:
+  sched_num: 1
+  route_id: 1
+  etd: 2014-07-27 18:04:26
+  atd: 2014-07-27 18:04:26
+  eta: 2014-07-27 18:04:26
+  ata: 2014-07-27 18:04:26
+  delay: 2014-07-27 18:04:26
+  canceled: false
+  info: MyText
+
+two:
+  sched_num: 1
+  route_id: 1
+  etd: 2014-07-27 18:04:26
+  atd: 2014-07-27 18:04:26
+  eta: 2014-07-27 18:04:26
+  ata: 2014-07-27 18:04:26
+  delay: 2014-07-27 18:04:26
+  canceled: false
+  info: MyText

@@ -1,0 +1,50 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <b>Sched num:</b>
+  <%= @schedule.sched_num %>
+</p>
+
+<p>
+  <b>Route:</b>
+  <%= @schedule.route_id %>
+</p>
+
+<p>
+  <b>Etd:</b>
+  <%= @schedule.etd %>
+</p>
+
+<p>
+  <b>Atd:</b>
+  <%= @schedule.atd %>
+</p>
+
+<p>
+  <b>Eta:</b>
+  <%= @schedule.eta %>
+</p>
+
+<p>
+  <b>Ata:</b>
+  <%= @schedule.ata %>
+</p>
+
+<p>
+  <b>Delay:</b>
+  <%= @schedule.delay %>
+</p>
+
+<p>
+  <b>Canceled:</b>
+  <%= @schedule.canceled %>
+</p>
+
+<p>
+  <b>Info:</b>
+  <%= @schedule.info %>
+</p>
+
+
+<%= link_to 'Edit', edit_schedule_path(@schedule) %> |
+<%= link_to 'Back', schedules_path %>
